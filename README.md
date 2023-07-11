@@ -1,2 +1,5 @@
 # top-projects
 A repository for all the mini-projects that are a part of The Odin Project curriculum.
+
+# landing-page
+A webpage created from a [provided](https://cdn.statically.io/gh/TheOdinProject/curriculum/81a5d553f4073e593d23a6ab00d50eef8620796d/foundations/html_css/project/imgs/01.png) [design](https://cdn.statically.io/gh/TheOdinProject/curriculum/81a5d553f4073e593d23a6ab00d50eef8620796d/foundations/html_css/project/imgs/02.png). Changed topic to Cosmic Turtle Cult and generated all the images myself using Stable Diffusion.
