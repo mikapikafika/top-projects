@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Handjet", sans-serif;
+}
+
+body {
+
+}
+
+.introduction {
+    padding: 50px;
+    background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
+}
+
+.introduction h1 {
+    color: white;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.introduction p {
+    font-weight: 400;
+    font-size: 30px;
+    text-align: justify;
+    color: white;
+}
+
+button {
+    font-size: 40px;
+}
+
+.resultContainer {
+    padding: 50px;
+    background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
+}
