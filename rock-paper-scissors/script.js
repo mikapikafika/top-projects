@@ -44,12 +44,17 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
+let roundsPlayed = 0;
+let playerScore = 0;
+let computerScore = 0;
+
 /**
- * Handles what happens upon clicking
+ * Handles what happens upon clicking, main function
  * @param event a click
  */
 function handleClick(event) {
-    const button = event.target;
+    const button = event.target.closest("button");
+    if (!button) return;
     let value;
     let message;
 
@@ -72,13 +77,40 @@ function handleClick(event) {
     const result = playRound(value, computerChoice);
     const resultContainer = document.getElementById("resultContainer");
 
-    resultContainer.innerHTML = `You chose: ${value}<br>
-                                  ${message}<br>`;
-    // adding a delay of 3 seconds before showing the full result
+    // updating scores
+    if (result.includes("Congratulations!")) {
+        playerScore++;
+    } else if (result.includes("Oh no!")) {
+        computerScore++;
+    }
+    roundsPlayed++;
+
+    resultContainer.innerHTML = `You chose: <span class="choice-text text-uppercase">${value}</span><br>
+                                  <span class="message-text">${message}</span><br><br>`;
+
+    // adding a delay of 2 seconds before showing the full result
     setTimeout(() => {
-        resultContainer.innerHTML += `Your opponent chose: ${computerChoice}<br>
-                                       ${result}`;
-    }, 3000);
+        resultContainer.innerHTML += `Your opponent chose: <span class="choice-text text-uppercase">${computerChoice}</span><br>
+                                       <span class="message-text">${result}</span><br><br>
+                                       SCORES: Player <span class="choice-text">${playerScore} - ${computerScore}</span> Computer<br>
+                                       <span class="message-text">Round #${roundsPlayed}</span>`;
+        if (roundsPlayed === 5) {
+            // checking the winner after 5 rounds
+            let winner;
+            if (playerScore > computerScore) {
+                winner = "Player";
+            } else if (playerScore < computerScore) {
+                winner = "Opponent";
+            } else {
+                winner = "It's a tie!";
+            }
+            resultContainer.innerHTML += `<br>Game Over! The winner is: ${winner}`;
+            // resetting scores and roundsPlayed for a new game
+            roundsPlayed = 0;
+            playerScore = 0;
+            computerScore = 0;
+        }
+    }, 2000);
 }
 
 
@@ -122,9 +154,7 @@ function getRandomMessage(type) {
 }
 
 
-const buttons = document.querySelectorAll("button");
-buttons.forEach(button => {
-    button.addEventListener("click", handleClick);
-});
+const buttonsContainer = document.querySelector(".buttons");
+buttonsContainer.addEventListener("click", handleClick);
 
 
