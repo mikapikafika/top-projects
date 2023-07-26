@@ -43,6 +43,11 @@ button {
     background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
 }
 
+footer {
+    background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
+    height: 200px;
+}
+
 .btn-custom {
     color: white;
     border-radius: 0.375rem;
