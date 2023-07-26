@@ -5,6 +5,8 @@
     font-family: "Handjet", sans-serif;
 }
 
+/*--- INTRODUCTION ---*/
+
 .introduction {
     padding: 200px;
     background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
@@ -25,33 +27,32 @@
     color: white;
 }
 
+.introduction h4 {
+    color: white;
+    font-size: 40px;
+}
+
+/*--- BUTTONS SHEANANIGANS ---*/
+
 .buttons {
     padding: 100px;
     margin: 0 400px;
 }
 
-button {
+.buttons button {
     margin: 0 10px;
+    transition: all 0.5s ease-out;
 }
 
 .button-text {
     font-size: 50px;
 }
 
-.results {
-    padding: 200px;
-    background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
-}
-
-footer {
-    background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
-    height: 200px;
-}
-
 .btn-custom {
     color: white;
     border-radius: 0.375rem;
     padding: 0.375rem 0.75rem;
+    transition: all 0.5s ease-out;
 }
 
 .btn-alien {
@@ -81,12 +82,25 @@ footer {
     background: #2c74c7;
 }
 
+/*--- RESULTS ---*/
+
+.results {
+    padding: 200px;
+    background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
+}
+
+footer {
+    background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
+    height: 200px;
+}
+
 #resultContainer {
     font-weight: 400;
     font-size: 50px;
     text-align: center;
     color: white;
 }
+
 
 .choice-text {
     font-weight: 700;

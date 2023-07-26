@@ -44,6 +44,10 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
+const buttonsContainer = document.querySelector(".buttons");
+buttonsContainer.addEventListener("click", handleClick);
+
+
 let roundsPlayed = 0;
 let playerScore = 0;
 let computerScore = 0;
@@ -92,7 +96,7 @@ function handleClick(event) {
     setTimeout(() => {
         resultContainer.innerHTML += `Your opponent chose: <span class="choice-text text-uppercase">${computerChoice}</span><br>
                                        <span class="message-text">${result}</span><br><br>
-                                       SCORES: Player <span class="choice-text">${playerScore} - ${computerScore}</span> Computer<br>
+                                       SCORES: Player <span class="choice-text">${playerScore} - ${computerScore}</span> Opponent<br>
                                        <span class="message-text">Round #${roundsPlayed}</span>`;
         if (roundsPlayed === 5) {
             // checking the winner after 5 rounds
@@ -153,8 +157,5 @@ function getRandomMessage(type) {
     return messageList[Math.floor(Math.random() * messageList.length)];
 }
 
-
-const buttonsContainer = document.querySelector(".buttons");
-buttonsContainer.addEventListener("click", handleClick);
 
 
