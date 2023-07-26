@@ -89,15 +89,26 @@ function handleClick(event) {
     }
     roundsPlayed++;
 
-    resultContainer.innerHTML = `You chose: <span class="choice-text text-uppercase">${value}</span><br>
-                                  <span class="message-text">${message}</span><br><br>`;
+    resultContainer.innerHTML = `<p>You chose: <span class="choice-text text-uppercase">${value}</span><br>
+                                  <span class="message-text">${message}</span></p><br><br>`;
+
 
     // adding a delay of 2 seconds before showing the full result
     setTimeout(() => {
-        resultContainer.innerHTML += `Your opponent chose: <span class="choice-text text-uppercase">${computerChoice}</span><br>
+        resultContainer.innerHTML += `<p>Your opponent chose: <span class="choice-text text-uppercase">${computerChoice}</span><br>
                                        <span class="message-text">${result}</span><br><br>
                                        SCORES: Player <span class="choice-text">${playerScore} - ${computerScore}</span> Opponent<br>
-                                       <span class="message-text">Round #${roundsPlayed}</span>`;
+                                       <span class="message-text">Round #${roundsPlayed}</span></p>`;
+
+        // resetting animations for all text elements inside resultContainer
+        const allTextElements = resultContainer.querySelectorAll('*');
+        allTextElements.forEach((element) => {
+            element.style.animation = 'none';
+            // forcing a reflow before reapplying the animation to prevent flickering
+            element.offsetHeight;
+            element.style.animation = 'fadeIn 1s forwards';
+        });
+
         if (roundsPlayed === 5) {
             // checking the winner after 5 rounds
             let winner;
@@ -108,7 +119,7 @@ function handleClick(event) {
             } else {
                 winner = "It's a tie!";
             }
-            resultContainer.innerHTML += `<br>Game Over! The winner is: ${winner}`;
+            resultContainer.innerHTML += `<br><p>Game Over! The winner is: ${winner}</p>`;
             // resetting scores and roundsPlayed for a new game
             roundsPlayed = 0;
             playerScore = 0;
