@@ -10,7 +10,7 @@ body {
 }
 
 .introduction {
-    padding: 50px;
+    padding: 200px;
     background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
 }
 
@@ -27,11 +27,45 @@ body {
     color: white;
 }
 
-button {
-    font-size: 40px;
+.buttons {
+    padding: 100px;
+    margin: 0 400px;
 }
 
-.resultContainer {
-    padding: 50px;
+button {
+    margin: 0 10px;
+}
+
+.button-text {
+    font-size: 50px;
+}
+
+.results {
+    padding: 200px;
     background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
+    margin-bottom: 0;
+}
+
+.btn-custom {
+
+}
+
+.btn-alien {
+    background: #0052D4;
+    color: white;
+    border-radius: 0.375rem;
+    border-color: #0052D4;
+    padding: 0.375rem 0.75rem;
+}
+
+.btn-alien:hover {
+    background: #00358a;
+    color: white;
+}
+
+#resultContainer {
+    font-weight: 400;
+    font-size: 50px;
+    text-align: center;
+    color: white;
 }
